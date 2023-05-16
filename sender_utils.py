@@ -1,5 +1,6 @@
 """
 Sender utility functions and consts
+https://wingxel.github.io/website/index.html
 """
 import argparse
 import re

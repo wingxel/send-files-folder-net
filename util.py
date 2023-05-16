@@ -1,5 +1,5 @@
 """
-Services
+Common utility functions
 https://wingxel.github.io/website/index.html
 """
 
@@ -61,6 +61,11 @@ def get_dir_size(the_folder: str) -> int:
 
 
 def mark(d: int) -> None:
+    """
+    Print logs to screen
+    :param d:
+    :return:
+    """
     print(f"At => {d}")
 
 

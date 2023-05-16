@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """
-Receiver End
+Receive file(s) and/or folder(s) across the network
 https://wingxel.github.io/website/index.html
-
-Usage python3 Receiver.py Port file_saving_directory
 """
 
 import json
