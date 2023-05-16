@@ -4,12 +4,11 @@ Sender utility functions and consts
 import argparse
 import re
 import sys
+import util
 
 
 # IP address regex
 IP_REGEX = re.compile(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$")
-# Port number regex
-PORT_REGEX = re.compile(r"^\d{4,5}$")
 
 
 def check_if_ip_valid(ip: str) -> bool:
@@ -24,15 +23,6 @@ def check_if_ip_valid(ip: str) -> bool:
         if cr > 255 or cr < 0:
             return False
     return True
-
-
-def check_if_port_valid(port_number: int) -> bool:
-    """
-    Check if provided port number is valid - 1025-65535
-    :param port_number: number to check
-    :return:
-    """
-    return 1025 <= port_number < 65536
 
 
 def get_args() -> dict:
@@ -66,7 +56,7 @@ def get_args() -> dict:
         sys.exit(f"Invalid IP address {ip_address}")
 
     port_number = args.port
-    if not len(PORT_REGEX.findall(port_number)) == 1 or not check_if_port_valid(int(port_number)):
+    if not len(util.PORT_REGEX.findall(port_number)) == 1 or not util.check_if_port_valid(int(port_number)):
         sys.exit(f"Invalid port number {port_number}")
 
     return {

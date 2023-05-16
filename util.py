@@ -20,6 +20,19 @@ port_regex = re.compile(r"\d{4}")
 probable_ports = [8000, 8001, 1578, 1233, 2578, 31293, 4319, 42780, 1783, 3301, 1890, 1234,
                   1901, 6490, 61514, 14312]
 
+# Port number regex
+PORT_REGEX = re.compile(r"^\d{4,5}$")
+
+
+def check_if_port_valid(port_number: int) -> bool:
+    """
+    Check if provided port number is valid - 1025-65535
+    :param port_number: number to check
+    :return:
+    """
+    return 1025 <= port_number < 65536
+
+
 if os.path.exists("/sdcard/"):
     save_location = os.sep.join(["", "sdcard", "SharePy3"])
 
