@@ -5,8 +5,8 @@ https://wingxel.github.io/website/index.html
 import argparse
 import re
 import sys
-import util
 
+import util
 
 # IP address regex
 IP_REGEX = re.compile(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$")

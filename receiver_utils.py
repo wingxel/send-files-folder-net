@@ -4,12 +4,12 @@ https://wingxel.github.io/website/index.html
 """
 
 import argparse
-from pathlib import Path
 import os
-from socket import socket, AF_INET, SOCK_STREAM
-import util
 import sys
+from pathlib import Path
+from socket import socket, AF_INET, SOCK_STREAM
 
+import util
 
 # The default folder to save received items
 DEFAULT_SAVE_FOLDER = os.sep.join([str(Path.home()), "SharePY3"])

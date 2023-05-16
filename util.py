@@ -8,7 +8,6 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-
 # Folder where the log file is at
 LOG_FILE_LOCATION = os.sep.join([str(Path.home()), ".FileSharePY3_Log"])
 # The log file
