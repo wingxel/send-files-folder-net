@@ -132,7 +132,7 @@ class Receiver:
                 try:
                     connection_socket, client_address = self.server_socket.accept()
                     print(f"Client Connected => {client_address} : {datetime.now()}")
-                    # Each sender is handled by a different thread
+                    # Each sender client is handled by a different thread
                     t = Thread(target=communicate, args=(connection_socket, client_address))
                     t.start()
                 except KeyboardInterrupt:
