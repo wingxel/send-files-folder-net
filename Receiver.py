@@ -77,6 +77,7 @@ def communicate(connection_socket: socket, client_address: tuple) -> None:
                                 break
                             # Receive subsequent chunks
                             data = connection_socket.recv(1024)
+                    # Tell sender to send next file
                     connection_socket.send(b"next")
                     """if receive_progress_tracker < directory_size:
                         connection_socket.send(b"next")"""
