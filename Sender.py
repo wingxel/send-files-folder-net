@@ -6,11 +6,10 @@ https://wingxel.github.io/website/index.html
 
 import json
 import os
-import sys
 from datetime import datetime
 from socket import socket, AF_INET, SOCK_STREAM
 from threading import Thread
-
+from sender_utils import get_args
 import util
 
 
@@ -100,14 +99,5 @@ def main(ip_ad: str, port_num: int, data_s: list) -> None:
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        arguments = util.get_sender_args(sys.argv[1:])
-        if len(arguments["ip"]) == 0:
-            util.usage_sender()
-            sys.exit(1)
-        if arguments["port"] == 0:
-            util.usage_sender()
-            sys.exit(1)
-        main(arguments["ip"], arguments["port"], arguments["data"])
-    else:
-        util.usage_sender()
+    arguments = get_args()
+    main(arguments["address"], arguments["port"], arguments["files"])
