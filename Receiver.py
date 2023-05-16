@@ -75,7 +75,7 @@ def communicate(connection_socket: socket, client_address: tuple) -> None:
                             # stop receiving and writing
                             if received_size == full_file_size or not util.receiving:
                                 break
-                            # Receive subsequent chunks
+                            # Receive subsequent chunks for current file
                             data = connection_socket.recv(1024)
                     # Tell sender to send next file
                     connection_socket.send(b"next")
