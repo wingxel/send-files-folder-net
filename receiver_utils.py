@@ -61,7 +61,7 @@ def get_receiver_args() -> dict:
 
     parser.add_argument(
         "-p", "--port", default=str(get_available_port()),
-        help=F"Port address to use for receiving, if not {get_available_port()} will be used"
+        help=f"Port address to use for receiving, if not {get_available_port()} will be used"
     )
     parser.add_argument(
         "-s", "--save", default=DEFAULT_SAVE_FOLDER,
